@@ -16,7 +16,7 @@ pyupload <filename> --host=<host>
 
 ## Example
 ```
-pyupload .gitignore --host=fileio
+pyupload .gitignore --host=catbox
 
 [1674/1674] bytes |====================>|Your link : https://files.catbox.moe/e03ygs.gitignore
 ```
