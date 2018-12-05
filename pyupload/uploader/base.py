@@ -31,7 +31,10 @@ class Uploader:
         if extension == '':
             extension = '.txt'
         mimetypes.init()
-        return mimetypes.types_map[extension]
+        try:
+            return mimetypes.types_map[extension]
+        except KeyError:
+            return 'plain/text'
 
     def execute(self):
         raise NotImplementedError()
