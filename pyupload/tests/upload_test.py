@@ -43,11 +43,6 @@ class TestUploadMethods(unittest.TestCase):
         result = uploader.execute()
         self.compare(result)
 
-    def test_mixtape(self):
-        uploader = MixTapeUploader(self.filename)
-        result = uploader.execute()
-        self.compare(result)
-
 
 if __name__ == "__main__":
     unittest.main()

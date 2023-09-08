@@ -3,14 +3,13 @@ import click
 
 uploader_classes = {
     "catbox": CatboxUploader,
-    "mixtape": MixTapeUploader,
     "uguu": UguuUploader,
     "fileio": FileioUploader
 }
 
 
 @click.command()
-@click.option('--host', default='catbox', help='catbox/mixtape/uguu/fileio')
+@click.option('--host', default='catbox', help='catbox/uguu/fileio')
 @click.argument('name')
 def upload(host, name):
     uploader_class = uploader_classes[host]
