@@ -17,7 +17,7 @@ def generate_random_file_content():
 class TestUploadMethods(unittest.TestCase):
     def setUp(self):
         self.content = generate_random_file_content()
-        self.filename = 'testfile'
+        self.filename = 'testfile.txt'
         with open(self.filename, 'w') as f:
             f.write(self.content)
 
@@ -30,6 +30,11 @@ class TestUploadMethods(unittest.TestCase):
 
     def test_catbox(self):
         uploader = CatboxUploader(self.filename)
+        result = uploader.execute()
+        self.compare(result)
+
+    def test_pomf(self):
+        uploader = PomfUploader(self.filename)
         result = uploader.execute()
         self.compare(result)
 
